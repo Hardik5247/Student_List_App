@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "113380677582",
+    "firebase_url": "https://student-list-app-3f1b0.firebaseio.com",
+    "project_id": "student-list-app-3f1b0",
+    "storage_bucket": "student-list-app-3f1b0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:113380677582:android:ef53aaf6c9eddbecda7d9f",
+        "android_client_info": {
+          "package_name": "com.example.studentlistapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "113380677582-ajhiup4o3rrckevkf345k7vnd4itri82.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkBUahVYpY5r5E1MP9BRNqXltNZipY5ok"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "113380677582-ajhiup4o3rrckevkf345k7vnd4itri82.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
