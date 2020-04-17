@@ -69,7 +69,7 @@ public class MyDialog extends AppCompatDialogFragment {
                         int mPendingIntentId = 123456;
                         PendingIntent mPendingIntent = PendingIntent.getActivity(context, mPendingIntentId, mStartActivity, PendingIntent.FLAG_CANCEL_CURRENT);
                         AlarmManager mgr = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
-                        mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 100, mPendingIntent);
+                        mgr.set(AlarmManager.RTC, System.currentTimeMillis(), mPendingIntent);
 
                         System.exit(0);
                     }
