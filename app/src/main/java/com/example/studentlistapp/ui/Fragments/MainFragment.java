@@ -1,9 +1,8 @@
-package com.example.studentlistapp.ui.main;
+package com.example.studentlistapp.ui.Fragments;
 
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,23 +13,20 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.example.studentlistapp.R;
+import com.example.studentlistapp.ui.Adapters.MyAdapter;
+import com.example.studentlistapp.ui.Adapters.MyDialog;
+import com.example.studentlistapp.ui.main.ItemClickListener;
+import com.example.studentlistapp.ui.ViewModel.MainViewModel;
+import com.example.studentlistapp.ui.Model.Users;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class MainFragment extends Fragment implements ItemClickListener{
-
-    public static String name;
-    public static String enroll;
-    public static String bhavan;
-    public static String branch;
+public class MainFragment extends Fragment implements ItemClickListener {
 
     private ArrayList<Users> users;
     private MainViewModel mViewModel;
@@ -92,10 +88,16 @@ public class MainFragment extends Fragment implements ItemClickListener{
 
     @Override
     public void onClick(View view, int position) {
-        name = users.get(position).getUserName();
-        enroll = users.get(position).getUserNumber();
-        bhavan = users.get(position).getUserBhavan();
-        branch = users.get(position).getUserBranch();
-        Navigation.findNavController(view).navigate(R.id.detailsFragment);
+        String[] array = new String[4];
+
+        array[0] = users.get(position).getUserName();
+        array[1] = users.get(position).getUserNumber();
+        array[2] = users.get(position).getUserBhavan();
+        array[3] = users.get(position).getUserBranch();
+
+        Bundle bundle = new Bundle();
+        bundle.putStringArray("array",array);
+
+        Navigation.findNavController(view).navigate(R.id.detailsFragment,bundle);
     }
 }

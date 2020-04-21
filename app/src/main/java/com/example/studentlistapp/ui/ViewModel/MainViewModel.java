@@ -1,23 +1,17 @@
-package com.example.studentlistapp.ui.main;
+package com.example.studentlistapp.ui.ViewModel;
 
-import android.content.Context;
-
-import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.example.studentlistapp.ui.main.Repo;
+import com.example.studentlistapp.ui.Model.Users;
 
 import java.util.ArrayList;
 
 public class MainViewModel extends ViewModel {
 
     private MutableLiveData<ArrayList<Users>> liveData;
-    private MutableLiveData<ArrayList<Users>> liveData1;
-
 
     public void init (){
          if(liveData != null){

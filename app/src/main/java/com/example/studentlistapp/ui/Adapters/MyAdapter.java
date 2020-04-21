@@ -1,4 +1,4 @@
-package com.example.studentlistapp.ui.main;
+package com.example.studentlistapp.ui.Adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.studentlistapp.R;
+import com.example.studentlistapp.ui.main.ItemClickListener;
+import com.example.studentlistapp.ui.Model.Users;
 
 import java.util.ArrayList;
 
@@ -42,6 +44,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
 
     public void setClickListener(ItemClickListener itemClickListener) {
         this.clickListener = itemClickListener;
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position;
     }
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {

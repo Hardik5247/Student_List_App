@@ -6,7 +6,7 @@
     app:startDestination="@id/mainFragment">
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.studentlistapp.ui.main.MainFragment"
+        android:name="com.example.studentlistapp.ui.Fragments.MainFragment"
         android:label="main_fragment"
         tools:layout="@layout/main_fragment" >
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.example.studentlistapp.ui.main.DetailsFragment"
+        android:name="com.example.studentlistapp.ui.Fragments.DetailsFragment"
         android:label="fragment_details"
         tools:layout="@layout/fragment_details" />
 

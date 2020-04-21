@@ -1,4 +1,4 @@
-package com.example.studentlistapp.ui.main;
+package com.example.studentlistapp.ui.Model;
 
 public class Users {
     private String userName;

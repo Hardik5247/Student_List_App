@@ -1,21 +1,17 @@
-package com.example.studentlistapp.ui.main;
+package com.example.studentlistapp.ui.Fragments;
 
 import android.os.Bundle;
 
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.studentlistapp.R;
-
-import java.util.ArrayList;
+import com.example.studentlistapp.ui.ViewModel.MainViewModel;
 
 public class DetailsFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
@@ -60,10 +56,12 @@ public class DetailsFragment extends Fragment {
         bhavan1 = v.findViewById(R.id.textViewBhavan);
         branch1 = v.findViewById(R.id.textViewBranch);
 
-        name1.setText((MainFragment.name).toString());
-        enroll1.setText((MainFragment.enroll).toString());
-        bhavan1.setText((MainFragment.bhavan).toString());
-        branch1.setText((MainFragment.branch).toString());
+        String[] array1 = getArguments().getStringArray("array");
+
+        name1.setText(array1[0]);
+        enroll1.setText(array1[1]);
+        bhavan1.setText(array1[2]);
+        branch1.setText(array1[3]);
 
         return v;
     }

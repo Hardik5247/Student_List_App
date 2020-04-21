@@ -1,12 +1,10 @@
 package com.example.studentlistapp.ui.main;
 
 
-import android.app.DownloadManager;
-import android.content.Context;
-
 import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
 
+import com.example.studentlistapp.ui.Model.Users;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -15,16 +13,12 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Queue;
 
 public class Repo {
 
     static Repo instance;
     private ArrayList<Users> users = new ArrayList<>();
     private MutableLiveData<ArrayList<Users>> name = new MutableLiveData<>();
-
-
-
 
     public static Repo getInstance() {
 
@@ -54,11 +48,11 @@ public class Repo {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
+                users.clear();
                 for(DataSnapshot snapshot :dataSnapshot.getChildren()) {
-
                     users.add(snapshot.getValue(Users.class));
                 }
-                name.postValue(users);
+                name.setValue(users);
             }
 
             @Override

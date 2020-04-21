@@ -1,23 +1,18 @@
-package com.example.studentlistapp.ui.main;
+package com.example.studentlistapp.ui.Adapters;
 
-import android.app.AlarmManager;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
-import com.example.studentlistapp.MainActivity;
 import com.example.studentlistapp.R;
+import com.example.studentlistapp.ui.Model.Users;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -63,15 +58,6 @@ public class MyDialog extends AppCompatDialogFragment {
                         String userId = mDatabase.push().getKey();
 
                         mDatabase.child(userId).setValue(user);
-
-                        Context context = getContext();
-                        Intent mStartActivity = new Intent(context, MainActivity.class);
-                        int mPendingIntentId = 123456;
-                        PendingIntent mPendingIntent = PendingIntent.getActivity(context, mPendingIntentId, mStartActivity, PendingIntent.FLAG_CANCEL_CURRENT);
-                        AlarmManager mgr = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
-                        mgr.set(AlarmManager.RTC, System.currentTimeMillis(), mPendingIntent);
-
-                        System.exit(0);
                     }
                 });
         return builder.create();
